@@ -1,9 +1,9 @@
 #include "sort.h"
 
 /**
- * swap_ints - Swap two integers in an array.
- * @firstnum: The first integer to swap.
- * @secondnum: The second integer to swap.
+ * swap_ints - this func swap two numbers
+ * @firstnum: first number
+ * @secondnum: second number
  */
 void swap_ints(int *firstnum, int *secondnum)
 {
