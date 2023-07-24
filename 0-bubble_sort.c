@@ -1,23 +1,9 @@
 #include "sort.h"
 
 /**
- * swap_ints - this func swap two numbers
- * @firstnum: first number
- * @secondnum: second number
- */
-void swap_ints(int *firstnum, int *secondnum)
-{
-	int temp;
-
-	temp = *firstnum;
-	*firstnum = *secondnum;
-	*secondnum = temp;
-}
-
-/**
- * bubble_sort - Sort an array of integers in ascending order.
- * @array: An array of integers to sort.
- * @size: The size of the array.
+ * bubble_sort - sort an array of integers
+ * @array: an array to be sorted
+ * @size: size of array
  *
  * Description: Prints the array after each swap.
  */
