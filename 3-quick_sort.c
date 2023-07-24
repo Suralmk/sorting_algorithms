@@ -50,7 +50,7 @@ int find_partision(int *array, size_t size, int left, int right)
 
 	end = array + right;
 	up = down = left;
-	while (down < right;)
+	while (down < right)
 	{
 		if (array[down] < *end)
 		{
