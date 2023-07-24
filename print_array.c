@@ -2,20 +2,22 @@
 #include <stdio.h>
 
 /**
- * print_array - Print array elemnts
+ * print_array - Prints an array of integers
  *
- * @array: Printed array
- * @size: size of the array
+ * @array: The array to be printed
+ * @size: Number of elements in @array
  */
 void print_array(const int *array, size_t size)
 {
-	size_t n;
+	size_t i;
 
-	for (n = 0; array && n < size; ++n)
+	i = 0;
+	while (array && i < size)
 	{
-		if (n > 0)
+		if (i > 0)
 			printf(", ");
-		printf("%d", array[n]);
+		printf("%d", array[i]);
+		++i;
 	}
 	printf("\n");
-}	
+}
