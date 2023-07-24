@@ -2,16 +2,16 @@
 
 /**
  * swap_ints - Swap two integers in an array.
- * @a: The first integer to swap.
- * @b: The second integer to swap.
+ * @firstnum: The first integer to swap.
+ * @secondnum: The second integer to swap.
  */
-void swap_ints(int *a, int *b)
+void swap_ints(int *firstnum, int *secondnum)
 {
-	int tmp;
+	int temp;
 
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
+	temp = *firstnum;
+	*firstnum = *secondnum;
+	*secondnum = temp;
 }
 
 /**
@@ -23,24 +23,24 @@ void swap_ints(int *a, int *b)
  */
 void bubble_sort(int *array, size_t size)
 {
-	size_t i, len = size;
-	bool bubbly = false;
+	size_t i, length = size;
+	bool isbubbly = false;
 
 	if (array == NULL || size < 2)
 		return;
 
-	while (bubbly == false)
+	while (isbubbly == false)
 	{
-		bubbly = true;
-		for (i = 0; i < len - 1; i++)
+		isbubbly = true;
+		for (i = 0; i < length - 1; i++)
 		{
 			if (array[i] > array[i + 1])
 			{
 				swap_ints(array + i, array + i + 1);
 				print_array(array, size);
-				bubbly = false;
+				isbubbly = false;
 			}
 		}
-		len--;
+		length--;
 	}
 }
