@@ -69,13 +69,17 @@ void sort_radix_counting(int *array, size_t size, int s, int *lock)
 	size_t i = 0;
 
 	while (i < size)
+	{
 		count[(array[i] / s) % 10] += 1;
 		i++;
+	}
 
 	i = 0;
 	while (i < 10)
+	{
 		count[i] += count[i - 1];
 		i++;
+	}
 
 	i = size - 1;
 	while ((int)i >= 0)
@@ -87,6 +91,8 @@ void sort_radix_counting(int *array, size_t size, int s, int *lock)
 
 	i = 0;
 	while (i < size)
+	{
 		array[i] = lock[i];
 		i++;
+	}
 }
