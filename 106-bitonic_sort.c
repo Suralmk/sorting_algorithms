@@ -55,7 +55,7 @@ void merge_bio(int *array, size_t size, size_t begin, size_t sequence,
 			if ((direction == UP && array[i] > array[i + wide]) ||
 			    (direction == DOWN && array[i] < array[i + wide]))
 				swap_ints(array + i, array + i + wide);
-				i++;
+			i++;
 		}
 		merge_bio(array, size, begin, wide, direction);
 		merge_bio(array, size, begin + wide, wide, direction);
