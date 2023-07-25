@@ -28,18 +28,24 @@ void counting_sort(int *array, size_t size)
 
 	i = 0;
 	while (i < (big + 1))
+	{
 		place_c[i] = 0;
 		i++;
+	}
 
 	i = 0;
 	while (i < (int)size)
+	{
 		place_c[array[i]] += 1;
 		i++;
+	}
 
 	i = 0;
 	while (i < (big + 1))
+	{
 		place_c[i] += place_c[i - 1];
 		i++;
+	}
 
 	print_array(place_c, big + 1);
 
@@ -53,8 +59,10 @@ void counting_sort(int *array, size_t size)
 
 	i = 0;
 	while (i < (int)size)
+	{
 		array[i] = sorted_array[i];
 		i++;
+	}
 
 	free(sorted_array);
 	free(place_c);
