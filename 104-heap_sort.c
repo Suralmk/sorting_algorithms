@@ -72,6 +72,6 @@ void heap_sort(int *array, size_t size)
 		change_int(array, array + i);
 		print_array(array, size);
 		heap_max(array, size, i, 0);
-		I--;
+		i--;
 	}
 }
