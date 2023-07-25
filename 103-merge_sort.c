@@ -61,7 +61,7 @@ void merge_second(int *second, int *lock, size_t first, size_t center,
 		x++;
 	}
 
-	for (; y < last)
+	while (; y < last)
 	{
 		lock[z++] = second[y];
 		y++;
@@ -69,7 +69,7 @@ void merge_second(int *second, int *lock, size_t first, size_t center,
 
 	x = first;
 	z = 0;
-	for (x < last)
+	while (x < last)
 	{
 		second[x] = lock[z++];
 		x++;
