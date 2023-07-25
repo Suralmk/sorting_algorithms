@@ -18,7 +18,7 @@ void counting_sort(int *array, size_t size)
 	sorted_array = malloc(sizeof(int) * size);
 	if (sorted_array == NULL)
 		return;
-	big = get_max(array, size);
+	big = find_big_num(array, size);
 	place_c = malloc(sizeof(int) * (big + 1));
 	if (place_c == NULL)
 	{
