@@ -1,9 +1,9 @@
 #include "sort.h"
 
 void change_int(int *a, int *b);
-void merge_bio(int *array, size_t size, size_t begin, size_t sqquence,
+void merge_bio(int *array, size_t size, size_t begin, size_t sequence,
 		char direction);
-void sequence_bio(int *array, size_t size, size_t begin, size_t sqquence, char direction);
+void sequence_bio(int *array, size_t size, size_t begin, size_t sequence, char direction);
 void bitonic_sort(int *array, size_t size);
 
 /**
@@ -14,7 +14,7 @@ void bitonic_sort(int *array, size_t size);
  */
 void bitonic_sort(int *array, size_t size)
 {
-	if (!array|| size < 2)
+	if (!array || size < 2)
 		return;
 
 	sequence_bio(array, size, 0, size, UP);
@@ -34,19 +34,19 @@ void change_int(int *firstnum, int *secondnum)
 }
 
 /**
- * merge_bio - Sort a bitonic sqquenceuence inside an array of integers.
+ * merge_bio - Sort a bitonic sequenceuence inside an array of integers.
  * @array: An array of integers.
  * @size: The size of the array.
- * @begin: The begining index of the sqquenceuence in array to sort.
- * @sequence: The size of the sqquenceuence to sort.
+ * @begin: The begining index of the sequenceuence in array to sort.
+ * @sequence: The size of the sequenceuence to sort.
  * @direction: The direction to sort in.
  */
-void merge_bio(int *array, size_t size, size_t begin, size_t sqquence,
+void merge_bio(int *array, size_t size, size_t begin, size_t sequence,
 		char direction)
 {
-	size_t i, jump = sqquence / 2;
+	size_t i, jump = sequence / 2;
 
-	if (sqquence > 1)
+	if (sequence > 1)
 	{
 		i = begin;
 		while (i < begin + jump)
@@ -65,25 +65,25 @@ void merge_bio(int *array, size_t size, size_t begin, size_t sqquence,
  * sequence_bio - convert array to biotonic.
  * @array: An array of integers.
  * @size: The size of the array.
- * @begin: The begining index of a block of the building bitonic sqquenceuence.
- * @sqquence: The size of a block of the building bitonic sequence.
+ * @begin: The begining index of a block of the building bitonic sequenceuence.
+ * @sequence: The size of a block of the building bitonic sequence.
  * @direction: The direction to sort the bitonic
  */
-void sequence_bio(int *array, size_t size, size_t begin, size_t sqquence, char direction)
+void sequence_bio(int *array, size_t size, size_t begin, size_t sequence, char direction)
 {
-	size_t cut = sqquence / 2;
+	size_t cut = sequence / 2;
 	char *str = (direction == UP) ? "UP" : "DOWN";
 
-	if (sqquence > 1)
+	if (sequence > 1)
 	{
-		printf("Merging [%lu/%lu] (%s):\n", sqquence, size, str);
-		print_array(array + begin, sqquence);
+		printf("Merging [%lu/%lu] (%s):\n", sequence, size, str);
+		print_array(array + begin, sequence);
 
 		sequence_bio(array, size, begin, cut, UP);
 		sequence_bio(array, size, begin + cut, cut, DOWN);
-		merge_bio(array, size, begin, sqquence, direction);
+		merge_bio(array, size, begin, sequence, direction);
 
-		printf("Result [%lu/%lu] (%s):\n", sqquence, size, str);
-		print_array(array + begin, sqquence);
+		printf("Result [%lu/%lu] (%s):\n", sequence, size, str);
+		print_array(array + begin, sequence);
 	}
 }
