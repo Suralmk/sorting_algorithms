@@ -81,12 +81,11 @@ int find_big_num(int *array, int size)
 
 	big = array[0];
 	i = 1;
-	while ( i < size)
+	while (i < size)
 	{
 		if (array[i] > big)
 			big = array[i];
 		i++;
 	}
-
 	return (big);
 }
